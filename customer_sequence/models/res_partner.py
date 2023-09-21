@@ -27,6 +27,7 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     unique_id = fields.Char(string='Unique Id', help="The Unique Sequence no", readonly=True, default='/')
+    phone = fields.Char(string='Phone', required=True)
 
     @api.model
     def create(self, values):
