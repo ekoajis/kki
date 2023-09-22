@@ -12,8 +12,6 @@ class ResPartner(models.Model):
 
     _inherit = "res.partner"
 
-    phone = fields.Char(string='Phone', required=True)
-
     def _get_next_ref(self, vals=None):
         return self.env["ir.sequence"].next_by_code("res.partner")
 
