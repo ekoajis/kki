@@ -9,12 +9,12 @@ class PurchaseOrder(models.Model):
 
     def _automate_purchase_order(self):
         for purchase in self:
-            if purchase.picking_ids:
-                for pickingd_id in purchase.picking_ids:
-                    if pickingd_id.state == 'assigned':
-                        pickingd_id.action_assign()
-                        pickingd_id.action_set_quantities_to_reservation()
-                        pickingd_id.button_validate()
+            # if purchase.picking_ids:
+                # for pickingd_id in purchase.picking_ids:
+                #     if pickingd_id.state == 'assigned':
+                #         pickingd_id.action_assign()
+                #         pickingd_id.action_set_quantities_to_reservation()
+                #         pickingd_id.button_validate()
             if not purchase.invoice_ids:
                 purchase.action_create_invoice()
             if purchase.invoice_ids:
